@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>rrv.o.s</AssemblyName>
+    <RootNamespace>RrvOs</RootNamespace>
+    <!-- WinExe: abre sem janela de console preta -->
+    <OutputType>WinExe</OutputType>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <Version>1.0.0</Version>
+    <Product>rrv.o.s</Product>
+    <Description>Sistema de Ordens de Serviço para oficina</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- A interface web vai embutida dentro do .exe -->
+    <EmbeddedResource Include="web\index.html" LogicalName="index.html" />
+  </ItemGroup>
+
+</Project>

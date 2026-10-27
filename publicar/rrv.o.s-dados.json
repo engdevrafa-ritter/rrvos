@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "nome": "Administrador",
+      "login": "admin",
+      "admin": true,
+      "ativo": true,
+      "salt": "5b009bae775da041ad545fbc2b8beb4e",
+      "hash": "CF9B02C22849BA03AEA1AFA0386AFEDD778829FC47B1BE81382E9B802D5AF9BC"
+    }
+  ],
+  "clientes": [],
+  "produtos": [],
+  "os": [],
+  "config": {
+    "oficina": "Minha oficina ",
+    "telefone": "",
+    "endereco": "",
+    "doc": "",
+    "msgOS": "Ol\u00E1 {cliente}! Aqui \u00E9 da {oficina}. Sua O.S n\u00BA {numero} ({veiculo}) est\u00E1: {status}. Total: {total}."
+  },
+  "seq": {
+    "user": 1,
+    "cliente": 1,
+    "os": 1,
+    "osnum": 1
+  }
+}

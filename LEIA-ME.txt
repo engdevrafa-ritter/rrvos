@@ -1,0 +1,49 @@
+rrv.o.s - Sistema de Ordens de Serviço para oficina (C# / .NET 8)
+=================================================================
+
+COMO GERAR O .EXE
+-----------------
+1. Instale o SDK do .NET 8 (uma vez só):
+   https://dotnet.microsoft.com/download/dotnet/8.0   (".NET SDK 8.x", Windows x64)
+2. Dê dois cliques em  Compilar.bat
+3. O programa pronto fica em  publicar\rrv.o.s.exe
+   (arquivo único, não precisa instalar o .NET no computador onde for usar)
+
+COMO USAR
+---------
+- Dê dois cliques em rrv.o.s.exe. O navegador abre sozinho em http://127.0.0.1:8787
+- Primeiro acesso:   usuário  admin    senha  admin123
+  >>> Troque a senha logo no primeiro acesso (botão "Alterar senha", canto inferior esquerdo).
+- Para fechar o programa: Gerenciador de Tarefas > finalizar "rrv.o.s"
+  (ele roda em segundo plano, sem janela).
+
+O QUE TEM
+---------
+- Login de usuários (administrador e usuário comum), com senha protegida (PBKDF2).
+- Clientes: cadastro completo + botão WhatsApp (abre a conversa já com mensagem pronta).
+- Produtos e serviços: preço, custo, estoque e estoque mínimo.
+- Ordens de Serviço: cliente, veículo/placa/km, defeito, diagnóstico, itens do cadastro
+  ou avulsos, mão de obra, desconto, pagamento, status, impressão e WhatsApp.
+  O estoque das peças é baixado sozinho quando a O.S fica "Concluída" ou "Entregue".
+- Painel com resumo, faturamento do mês, valores a receber e alerta de estoque baixo.
+- Configurações (admin): dados da oficina, mensagem padrão do WhatsApp, backup.
+
+ONDE FICAM OS DADOS
+-------------------
+No arquivo  rrv.o.s-dados.json  na MESMA pasta do rrv.o.s.exe
+(uma cópia de segurança  rrv.o.s-dados.json.bak  é mantida automaticamente).
+Para fazer backup, copie esse arquivo. Para mudar de computador, leve o .exe e o .json juntos.
+
+OBSERVAÇÕES
+-----------
+- O sistema só atende neste computador (127.0.0.1); não fica exposto na rede.
+- WhatsApp: usa o link oficial wa.me. Telefones com 10 ou 11 dígitos recebem o +55 automaticamente.
+- Mensagem do WhatsApp personalizável com: {cliente} {oficina} {numero} {veiculo} {status} {total}
+
+ARQUIVOS DO PROJETO
+-------------------
+rrv.o.s.csproj   projeto .NET
+Program.cs       servidor e regras (login, API, estoque, totais)
+Models.cs        modelos de dados e armazenamento
+web\index.html   interface (embutida dentro do .exe)
+Compilar.bat     gera o .exe
